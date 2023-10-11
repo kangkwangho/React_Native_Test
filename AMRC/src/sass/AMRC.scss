@@ -1,0 +1,683 @@
+  * {
+      padding: 0;
+      margin: 0;
+      font-size: 10px;
+  }
+
+  //스크롤
+  body {
+      background: linear-gradient(to bottom, #25b7ff, #F0C7E1);
+      -ms-user-select: none;
+      -moz-user-select: -moz-none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+
+      #wrap {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+
+          #master {
+              position: absolute;
+              top: 8%;
+              left: 95%;
+              transform: translate(-50%, -50%);
+              height: 8vh;
+          }
+
+          #pending_Approval_Details {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 22rem;
+              height: 30rem;
+              background-color: #8BB5E6;
+              border: 0.4rem solid #08FAFC;
+              border-radius: 1rem;
+              z-index: 1000;
+
+              .pending_Approval_Details_title {
+                  color: white;
+                  position: relative;
+                  width: 100%;
+                  height: 20%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  p {
+                      font-size: 1.5rem;
+                      font-weight: bold;
+                  }
+
+                  .xi-close-min {
+                      position: absolute;
+                      font-size: 3rem;
+                      cursor: pointer;
+                      top: 24%;
+                      left: 95%;
+                      transform: translate(-50%, -50%);
+                  }
+              }
+
+              .pending_Approval_Details_content {
+                  color: white;
+                  width: 100%;
+                  height: 10%;
+                  display: flex;
+                  align-items: center;
+
+                  p {
+                      font-size: 1.5rem;
+                      font-weight: bold;
+                  }
+
+                  p:nth-child(1) {
+                      margin: 0 3rem;
+                  }
+
+                  p:nth-child(2) {
+                      margin: 0 2.5rem;
+                  }
+
+              }
+
+              .pending_Approval_Details_value {
+                  width: 100%;
+                  height: 55%;
+                  background-color: gray;
+                  overflow: scroll;
+
+                  .user {
+                      display: flex;
+                      width: 100%;
+                      height: 20%;
+                      background-color: white;
+
+                      .userID {
+                          width: 35%;
+                          height: 100%;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          font-size: 1.5rem;
+                          font-weight: bold;
+                          overflow: hidden;
+                      }
+
+                      .userPWD {
+                          width: 35%;
+                          height: 100%;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          font-size: 1.5rem;
+                          font-weight: bold;
+                          overflow: hidden;
+                      }
+
+                      .userAdd {
+                          width: 15%;
+                          height: 100%;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                      }
+
+                      .userDelete {
+                          width: 15%;
+                          height: 100%;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+
+                          .delete_user {
+                              color: red;
+                              font-size: 2rem;
+                          }
+                      }
+
+
+
+
+                  }
+              }
+
+              .pending_Approval_Details_BTN {
+                  position: relative;
+                  width: 100%;
+                  height: 15%;
+
+                  #approval_BTN {
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      width: 75%;
+                      height: 75%;
+                      font-size: 1.5rem;
+                  }
+              }
+          }
+
+          #header {
+              position: relative;
+              width: 100%;
+              height: 15%;
+              text-align: center;
+
+              img {
+                  height: 100%;
+                  margin-top: 1rem;
+                  position: absolute;
+                  top: 0;
+                  left: calc(50% - (19.2124rem/2));
+              }
+          }
+
+          .outer {
+              display: flex;
+              width: 60rem;
+              height: 25rem;
+              margin: 10vh auto;
+              overflow-x: hidden;
+
+              .inner-list {
+                  display: flex;
+                  height: 100%;
+              }
+
+              .inner {
+                  display: flex;
+                  margin: 0 4rem;
+                  justify-content: center;
+                  position: relative;
+                  width: 21rem;
+                  border-radius: 1rem;
+                  border: 0.5rem solid #fd8080;
+                  background-color: white;
+
+                  .image1 {
+                      position: absolute;
+                      top: -5rem;
+                      scale: 0.4;
+                      z-index: 100;
+                  }
+
+                  .image2 {
+                      position: absolute;
+                      top: -41rem;
+                      scale: 0.18;
+                      z-index: 100;
+                  }
+
+                  .image3 {
+                      position: absolute;
+                      top: -17rem;
+                      scale: 0.37;
+                      z-index: 100;
+                  }
+
+                  .image4 {
+                      position: absolute;
+                      top: -37rem;
+                      scale: 0.2;
+                      z-index: 100;
+                  }
+
+                  .image5 {
+                      position: absolute;
+                      top: -24rem;
+                      scale: 0.29;
+                      z-index: 100;
+                  }
+
+                  .image6 {
+                      position: absolute;
+                      top: -30.1rem;
+                      scale: 0.18;
+                      z-index: 100;
+                  }
+
+                  .image7 {
+                      position: absolute;
+                      top: -11rem;
+                      scale: 0.55;
+                      z-index: 100;
+                  }
+
+                  .image8 {
+                      position: absolute;
+                      top: -10rem;
+                      scale: 0.55;
+                      z-index: 100;
+                  }
+
+                  h1 {
+                      position: absolute;
+                      font-size: 2rem;
+                      top: 20rem;
+                      z-index: 200;
+                  }
+              }
+          }
+
+          #ERROR {
+              width: 100%;
+              height: 100%;
+              display: none;
+              flex-direction: column;
+
+              .title {
+                  font-size: 7rem;
+                  font-weight: bold;
+                  color: red;
+                  text-align: center;
+                  margin-top: 4rem;
+              }
+
+              .message {
+                  font-size: 2rem;
+                  text-align: center;
+              }
+          }
+
+          #screen {
+              display: none;
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 0;
+              z-index: 300;
+              width: 100%;
+              height: 100%;
+              background-color: red;
+          }
+
+          .content {
+              position: relative;
+              display: none;
+              opacity: 0;
+              width: 97vw;
+              height: 80vh;
+              margin: 1rem auto;
+
+              .alert {
+                  position: absolute;
+                  top: 91%;
+                  left: 1%;
+                  transform: translate(-50%, -50%);
+                  scale: 0.6;
+              }
+
+              .alert_on {
+                  z-index: 3000;
+              }
+
+              .alert_off {
+                  z-index: 1000;
+              }
+
+              .info_1 {
+                  height: 100%;
+                  width: 43.333%;
+                  margin-top: 3vh;
+
+                  .control_area {
+                      display: flex;
+                      width: 100%;
+
+                      p:nth-child(1) {
+                          font-size: 6vh;
+                          font-weight: bold;
+                          margin-bottom: 4vh;
+                      }
+
+                      .battery_value {
+                          font-weight: bold;
+                          font-size: 4vh;
+                          line-height: 5vh;
+                          margin-left: 1vw;
+                      }
+
+                      .battery {
+                          position: relative;
+                          width: 10vw;
+                          height: 5vh;
+                          border: 0.6vh solid black;
+
+                          .battery_level {
+                              width: 0;
+                              height: 100%;
+                              background-color: #38ff00;
+                              transition: width 1s ease-in-out;
+                          }
+
+                          .charging-icon {
+                              position: absolute;
+                              font-size: 4vh;
+                              top: 50%;
+                              left: 50%;
+                              transform: translate(-150%, -55%);
+                          }
+                      }
+
+                      .location {
+                          font-weight: bold;
+                      }
+
+                      .location_X {
+                          margin: 0 0.5vw;
+                          color: red;
+                      }
+
+                      .location_Y {
+                          margin-right: 0.5vw;
+                          color: red;
+                      }
+
+                      .location_angle {
+                          color: red;
+                      }
+
+                      span {
+                          font-size: 4vh;
+                          font-weight: bold;
+
+                      }
+
+                      .forwardSpeed,
+                      .turnSpeed {
+                          margin-left: 1vw;
+                          color: red;
+                      }
+
+                      .height {
+                          color: red;
+                          margin-left: 1vw;
+                      }
+                  }
+
+                  .control_area:nth-child(2) {
+                      margin-bottom: 3vh;
+                  }
+              }
+
+              .info_2 {
+                  height: 100%;
+                  width: 23.333%;
+                  margin-top: 3vh;
+                  opacity: 0.1;
+              }
+
+              .controller {
+                  position: relative;
+                  height: 100%;
+                  width: 33.333%;
+
+                  .movePoint_box {
+                      padding: 1vh;
+                      background-color: #3D3D3D;
+                      border: 1.5vh solid #3D3D3D;
+                      position: absolute;
+                      width: 93%;
+                      display: flex;
+                      flex-wrap: wrap;
+                      top: 20%;
+                      justify-content: center;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+
+                      input {
+                          width: 70%;
+                          font-size: 3vh;
+                          background-color: #656565;
+                          color: white;
+                      }
+
+                      button {
+                          height: 10vh;
+                          font-size: 3vh;
+                          background-color: #323232;
+                          color: white;
+                      }
+
+                      .movePoint_Btn {
+                          width: 28%;
+                      }
+
+                      .moveStop_Btn,
+                      .cancleTheMove_Btn {
+                          margin-top: 2vh;
+                      }
+
+                      .moveStop_Btn,
+                      .cancleTheMove_Btn,
+                      .moveAgain_Btn {
+                          width: 50%;
+                      }
+                  }
+
+                  .controller_box {
+                      position: absolute;
+                      top: 70%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      width: 100%;
+                      height: 65%;
+                      display: flex;
+                      flex-wrap: wrap;
+
+                      .common-style {
+                          width: 32.333%;
+                          height: 32.333%;
+                          background-color: #1296DB;
+                          border-radius: 1rem;
+                          margin: auto;
+                      }
+
+                      .common-style:active {
+                          background-color: #9D2414;
+                      }
+                  }
+              }
+
+              .btn {
+                  width: 100%;
+                  position: absolute;
+                  display: flex;
+                  justify-content: flex-end;
+                  margin-top: -5vw;
+                  z-index: 1000;
+
+                  img {
+                      width: 5vw;
+                      margin-right: 1vw;
+                  }
+
+                  .gainControl {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      color: white;
+                      font-size: 3.3vh;
+                      margin-right: 1vw;
+                      width: 14vh;
+                      background-color: #323232;
+                      text-align: center;
+                  }
+
+                  .gainControl:active {
+                      background-color: #9D2414;
+                  }
+
+                  .transferControl {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      color: white;
+                      font-size: 3.3vh;
+                      margin-right: 1vw;
+                      width: 14vh;
+                      background-color: #323232;
+                      text-align: center;
+                  }
+
+                  .transferControl:active {
+                      background-color: #9D2414;
+                  }
+
+                  .letter-p {
+                      background: linear-gradient(to bottom right, #8dc7fa, #348cf1);
+                      border-radius: 10%;
+                  }
+
+                  .letter-p:active {
+                      background: linear-gradient(to bottom right, #d1cbca, #9D2414);
+                  }
+
+                  .messageArea {
+                      width: 50vh;
+                      margin-right: 1vw;
+                      overflow: hidden;
+
+                      p {
+                          transition: all 0.6s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+                          color: #ff5050;
+                          line-height: 7vh;
+                          font-size: 4vh;
+                          font-weight: bold;
+                          text-align: center;
+                          transform: translate(0, 2rem);
+                      }
+                  }
+
+                  .xi-log-out {
+                      font-size: 9vh;
+                      font-weight: bold;
+                      margin: 0 2vw;
+                  }
+
+                  .xi-log-out:active {
+                      color: #9D2414;
+                  }
+              }
+
+              .settingArea {
+                  transition: all 0.1s ease-in;
+                  position: absolute;
+                  display: none;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -57%);
+                  width: 45%;
+                  height: 116%;
+                  opacity: 0.9;
+                  background-color: #3D3D3D;
+                  z-index: 1000;
+
+                  .setting {
+                      color: white;
+                      background-color: #222222;
+                      margin: 3%;
+
+                      .setting_box,
+                      .speed_box {
+                          width: 100%;
+
+                          .setting_box_1,
+                          .speed_box_1 {
+                              display: flex;
+                              justify-content: space-around;
+
+                              p {
+                                  font-size: 4vh;
+                                  width: 70%;
+                              }
+
+                              select {
+                                  font-size: 3vh;
+                                  background-color: #656565;
+                                  color: white;
+
+                                  option {
+                                      font-size: 3vh
+                                  }
+                              }
+
+                              input {
+                                  color: white;
+                                  background-color: #3D3D3D;
+                                  width: 17%;
+                                  transform: translate(0, -1vh);
+                                  font-size: 4vh;
+                              }
+                          }
+
+                          .setting_box_2,
+                          .setting_box_3,
+                          .speed_box_2 {
+                              display: flex;
+                              justify-content: center;
+                          }
+
+                          .settingContent {
+                              input {
+                                  font-size: 6vh;
+                                  height: 10vh;
+                                  width: 100%;
+                                  color: white;
+                                  background-color: #3D3D3D;
+                              }
+                          }
+
+                          .speed_box_2 {
+                              margin-top: 1vh;
+
+                              input {
+                                  width: 100%;
+                              }
+
+                              select {
+                                  font-size: 3vh;
+                                  background-color: #656565;
+                                  color: white;
+
+                                  option {
+                                      font-size: 3vh
+                                  }
+                              }
+
+
+                          }
+                      }
+
+                      p {
+                          text-align: center;
+                          font-size: 6vh;
+                          margin: 2vh 0;
+                      }
+                  }
+
+                  .setting_3 {
+                      .close_box {
+                          position: absolute;
+                          top: 86%;
+                          width: 94%;
+
+                          input {
+                              font-size: 5vh;
+                              height: 10vh;
+                              width: 100%;
+                              color: white;
+                              background-color: #3D3D3D;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }

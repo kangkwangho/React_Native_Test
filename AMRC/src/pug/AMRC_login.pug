@@ -1,0 +1,121 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+        link(href="./css/AMRC_login.css" rel="stylesheet")
+        script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css")
+        title AMRC_login
+    body 
+        .wrap 
+            .alert_modal
+                p
+            .login
+                .login_1 
+                    img(src="./img/JKR_Logo.png")
+                    img(id="setting" src="./img/setting.png")
+                .login_2
+                    input(id="userID" type="text" placeholder="Enter ID")
+                    input(id="userPWD" type="password" placeholder="Enter PWD")
+                    .password_eye
+                        .xi-eye
+                        .xi-eye-slash
+                    button(id="login_BTN") Login
+                .setting_box 
+                    button(id="Join_BTN") Join
+                    .xi-close-min
+                    .setting_box_1
+                        .icon_box
+                            label(for="account_1")
+                                img(src="./img/signUp_Icon.png")
+                            label(for="account_2")
+                                img(src="./img/editProfile_Icon.png")
+                            label(for="account_3")
+                                img(src="./img/adminAccount_Icon.png")
+
+                        button(id="account_1" class="content_1 setting_content")
+                            p
+                                | Create 
+                                br
+                                | account
+                        button(id="account_2" class="content_2 setting_content")
+                            p
+                                | Edit
+                                br
+                                | account
+
+                        button(id="account_3" class="content_3 setting_content")
+                            p
+                                | Change
+                                br
+                                | master
+                    .setting_box_2
+                        .content_5
+                            .content_box_2
+                                .content_box_2-1
+                                    ul
+                                        li 
+                                            input(type="checkbox" id="master_checkbox")
+                                            span confer master
+                                        li  
+                                            label(for="create_id") ID:
+                                            input(type="text" id="create_id" placeholder ="ID creation field")
+                                        li
+                                            label(for="create_pwd") PWD:
+                                            input(type="password" id="create_pwd" placeholder ="PWD creation field")
+                                    .password_eye2
+                                        .xi-eye
+                                        .xi-eye-slash
+                                .content_box_2-2
+                                    ul  
+                                        li 
+                                            p Current ID and Password
+                                        li  
+                                            label(for="create_id") ID:
+                                            input(type="text" id="change_current_id" placeholder ="Current ID")
+                                        li
+                                            label(for="create_pwd") PWD:
+                                            input(type="password" id="change_current_pwd" placeholder ="Current Password")
+                                        li 
+                                            p New ID and Password
+                                        li  
+                                            label(for="create_id") ID:
+                                            input(type="text" id="change_id" placeholder ="New ID")
+                                        li
+                                            label(for="create_pwd") PWD:
+                                            input(type="password" id="change_pwd" placeholder ="New Password")
+                                    .password_eye3
+                                        .xi-eye
+                                        .xi-eye-slash
+                                    .password_eye4
+                                        .xi-eye
+                                        .xi-eye-slash
+
+                                .content_box_2-3
+                                    ul  
+                                        li 
+                                            p Master ID and Password
+                                        li  
+                                            label(for="current_master_id") ID:
+                                            input(type="text" id="current_master_id" placeholder ="Master ID")
+                                        li
+                                            label(for="current_master_pwd") PWD:
+                                            input(type="password" id="current_master_pwd" placeholder ="Master Password")
+                                        li 
+                                            p Change Master ID and Password
+                                        li  
+                                            label(for="change_master_id") ID:
+                                            input(type="text" id="change_master_id" placeholder ="Change Master ID")
+                                        li
+                                            label(for="change_master_pwd") PWD:
+                                            input(type="password" id="change_master_pwd" placeholder ="Change Master Password")
+                                    .password_eye5
+                                        .xi-eye
+                                        .xi-eye-slash
+                                    .password_eye6
+                                        .xi-eye
+                                        .xi-eye-slash
+
+
+    script(src="./js/AMRC_login.js")

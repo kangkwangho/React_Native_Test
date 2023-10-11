@@ -1,0 +1,211 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="apple-mobile-web-app-capable" content="yes")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+        link(href="./css/AMRC.css" rel="stylesheet")
+        script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css")
+        title Autonomous Robot Controller
+    body
+    #wrap
+        #pending_Approval_Details
+            .pending_Approval_Details_title
+                p Pending Approval Users
+                .xi-close-min
+            .pending_Approval_Details_content
+                p id
+                p pwd 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            .pending_Approval_Details_value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            .pending_Approval_Details_BTN
+                button(id="approval_BTN") Approval
+        #header
+            img(src="./img/JKR_Logo.png")
+        .outer
+            .inner-list
+                //inner의 개수는 짝수로 늘려야 옆으로 넘어가진다. JS에서 그렇게 설정.
+                //즉 inner가 7개 사용되면, 하나는 비우더라도 8개 만들어야함
+                .inner
+                    h1 AMB-150J
+                    img(class="image1" src="https://intermec.cl/2022/wp-content/uploads/2022/05/S-AMB-150J-1.jpg" alt="AMB150-J")
+                .inner
+                    h1 SPK-HAI-A42M-3
+                    img(class="image2" src="https://intermec.cl/2022/wp-content/uploads/2022/05/3.png" alt="SPK-HAI-A42M-3")
+                .inner
+                    h1 SFL-MP10S
+                    img(class="image3" src="https://intermec.cl/2022/wp-content/uploads/2022/05/S-SFL-MP10S-1.jpg" alt="SFL-MP10S")
+                .inner
+                    h1 SFL-CDD14
+                    img(class="image4" src="https://intermec.cl/2022/wp-content/uploads/2022/05/S-SFL-CDD14-1.jpg" alt="SFL-CDD14" )
+                .inner
+                    h1 SFL-CPD15-T
+                    img(class="image5" src="https://intermec.cl/2022/wp-content/uploads/2022/05/S-SFL-CPD15-T-600x699-1.jpg" alt="SFL-CPD15-T")
+                .inner
+                    h1 AMB-150-D
+                    img(class="image6" src="https://intermec.cl/2022/wp-content/uploads/2022/05/4.png" alt="AMB-150-D")
+                .inner
+                    h1 SFL-CDD16
+                    img(class="image7" src="./img/CDD16.png" alt="SFL-CDD16")
+                .inner
+                    h1 SFL-CBD15
+                    img(class="image8" src="./img/CBD15.png" alt="SFL-CBD15")
+        .content
+            .alert 
+                img(class="alert_on alert" src="./img/alert.png" style="display: none")
+                img(class="alert_off alert" src="./img/alert2.png")
+            .info_1
+                .control_area
+                    p(id="lobot_ID")
+                .control_area
+                    .battery    
+                        .battery_level
+                        .charging-icon#charging-icon &#9889;
+
+                    p(class="battery_value")
+                    .battery_charging
+                .control_area
+                    span(class="robotLocation location") Location:
+                    span(class="location_X location")
+                    span(class="location_Y location")
+                    span(class="location_angle location")
+                .control_area
+                    span(class='robotHeight') current height:
+                    span(class="height")
+                .control_area
+                    span(class='robotForwardSpeed') Forward speed:
+                    span(class="forwardSpeed")
+                .control_area
+                    span(class='robotTurnSpeed') Turn speed:
+                    span(class="turnSpeed")
+
+            .info_2
+            .controller
+                .movePoint_box
+                    input(class="input_point" type="number" placeholder="Point")
+                    button(class="movePoint_Btn") Move there
+                    button(class="moveStop_Btn") Move stop
+                    button(class="cancleTheMove_Btn") Cancle the move
+                .controller_box
+                    .controller_box1.common-style
+                    .controller_box2.common-style
+                    .controller_box3.common-style
+                    .controller_box4.common-style
+                    .controller_box5.common-style
+                    .controller_box6.common-style
+                    .controller_box7.common-style
+                    .controller_box8.common-style
+                    .controller_box9.common-style
+            .btn
+                .messageArea
+                    p 
+                .transferControl
+                    |transfer
+                    br
+                    |Control
+                .gainControl
+                    |gain
+                    br
+                    |Control
+                img( class="letter-p" src="./img/letter-p.png")
+                .xi-log-out
+            .settingArea
+                .setting_1.setting
+                    p speed
+                    .speed_box
+                        .speed_box_1.settingContent
+                            p Select an option:
+                            select(name='option types' id="optionTypes")
+                                option(value='', selected) -- 선택 --
+                                option(value='forward') forward
+                                option(value='turn') turn
+                        .speed_box_2.settingContent
+                            select(name='option types' id="optionTypes")
+                                option(value='', selected) -- 선택 --
+                                option(value='level1') level1
+                                option(value='level2') level2
+                                option(value='level3') level3
+                            input(id="speed adjustment" type="button" value="Send")
+
+                //**********************************************************************************************
+                //**********************************************************************************************
+
+                .setting_2.setting
+                    .setting_jacking 
+                        p control
+                        .setting_box
+                            .setting_box_1
+                                p Lift up to current height(m):
+                                input(type="number" placeholder="0.000" step="0.010" id="jackingLiftHeight")
+                            .setting_box_2.settingContent
+                                input(id="jacking_lift_send" type="button" value="Send")
+                                input(id="jacking_lift_stop" type="button" value="Stop")
+                            .setting_box_3.settingContent
+                                input(id="jacking_lift_up" type="button" value="Up")
+                                input(id="jacking_lift_down" type="button" value="Down")
+
+                    .setting_fork
+                        p control
+                        .setting_box
+                            .setting_box_1
+                                p Lift up to current height(m):
+                                input(type="number" placeholder="0.000" step="0.010" id="forkLiftHeight")
+                            .setting_box_2.settingContent
+                                input(type="button" value="Send" id="CDD16_fork_lift_send")
+                                input(type="button" value="Stop" id="fork_lift_stop")
+                    .setting_fork2
+                        p control
+                        .setting_box
+                            .setting_box_2.settingContent
+                                input(type="button" value="Up" id="CBD15_fork_lift_up")
+                                input(type="button" value="Down" id="CBD15_fork_lift_down")
+
+                //**********************************************************************************************
+                //**********************************************************************************************
+                .setting_3.setting 
+                    .close_box
+                        input(id="closeBox" type="button" value="Close")
+        #screen
+        #ERROR
+            .content1
+                .title ERROR
+            .content2 
+                .message
+    script.
+        //res.render("AMRC", {master : master_value});
+        let masterValue = "#{master}";
+    script(src="./js/AMRC_function.js")
+    script(src="./js/AMRC.js")
+    script(src="./js/AMRC_scroll.js")

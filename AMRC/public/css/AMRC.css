@@ -1,0 +1,598 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+}
+
+body {
+  background: linear-gradient(to bottom, #25b7ff, #F0C7E1);
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+body #wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+body #wrap #master {
+  position: absolute;
+  top: 8%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  height: 8vh;
+}
+body #wrap #pending_Approval_Details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22rem;
+  height: 30rem;
+  background-color: #8BB5E6;
+  border: 0.4rem solid #08FAFC;
+  border-radius: 1rem;
+  z-index: 1000;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_title {
+  color: white;
+  position: relative;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_title p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_title .xi-close-min {
+  position: absolute;
+  font-size: 3rem;
+  cursor: pointer;
+  top: 24%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_content {
+  color: white;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_content p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_content p:nth-child(1) {
+  margin: 0 3rem;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_content p:nth-child(2) {
+  margin: 0 2.5rem;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_value {
+  width: 100%;
+  height: 55%;
+  background-color: gray;
+  overflow: scroll;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_value .user {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  background-color: white;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_value .user .userID {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  overflow: hidden;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_value .user .userPWD {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  overflow: hidden;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_value .user .userAdd {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_value .user .userDelete {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_value .user .userDelete .delete_user {
+  color: red;
+  font-size: 2rem;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_BTN {
+  position: relative;
+  width: 100%;
+  height: 15%;
+}
+body #wrap #pending_Approval_Details .pending_Approval_Details_BTN #approval_BTN {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  font-size: 1.5rem;
+}
+body #wrap #header {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  text-align: center;
+}
+body #wrap #header img {
+  height: 100%;
+  margin-top: 1rem;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 9.6062rem);
+}
+body #wrap .outer {
+  display: flex;
+  width: 60rem;
+  height: 25rem;
+  margin: 10vh auto;
+  overflow-x: hidden;
+}
+body #wrap .outer .inner-list {
+  display: flex;
+  height: 100%;
+}
+body #wrap .outer .inner {
+  display: flex;
+  margin: 0 4rem;
+  justify-content: center;
+  position: relative;
+  width: 21rem;
+  border-radius: 1rem;
+  border: 0.5rem solid #fd8080;
+  background-color: white;
+}
+body #wrap .outer .inner .image1 {
+  position: absolute;
+  top: -5rem;
+  scale: 0.4;
+  z-index: 100;
+}
+body #wrap .outer .inner .image2 {
+  position: absolute;
+  top: -41rem;
+  scale: 0.18;
+  z-index: 100;
+}
+body #wrap .outer .inner .image3 {
+  position: absolute;
+  top: -17rem;
+  scale: 0.37;
+  z-index: 100;
+}
+body #wrap .outer .inner .image4 {
+  position: absolute;
+  top: -37rem;
+  scale: 0.2;
+  z-index: 100;
+}
+body #wrap .outer .inner .image5 {
+  position: absolute;
+  top: -24rem;
+  scale: 0.29;
+  z-index: 100;
+}
+body #wrap .outer .inner .image6 {
+  position: absolute;
+  top: -30.1rem;
+  scale: 0.18;
+  z-index: 100;
+}
+body #wrap .outer .inner .image7 {
+  position: absolute;
+  top: -11rem;
+  scale: 0.55;
+  z-index: 100;
+}
+body #wrap .outer .inner .image8 {
+  position: absolute;
+  top: -10rem;
+  scale: 0.55;
+  z-index: 100;
+}
+body #wrap .outer .inner h1 {
+  position: absolute;
+  font-size: 2rem;
+  top: 20rem;
+  z-index: 200;
+}
+body #wrap #ERROR {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+}
+body #wrap #ERROR .title {
+  font-size: 7rem;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  margin-top: 4rem;
+}
+body #wrap #ERROR .message {
+  font-size: 2rem;
+  text-align: center;
+}
+body #wrap #screen {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 300;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+body #wrap .content {
+  position: relative;
+  display: none;
+  opacity: 0;
+  width: 97vw;
+  height: 80vh;
+  margin: 1rem auto;
+}
+body #wrap .content .alert {
+  position: absolute;
+  top: 91%;
+  left: 1%;
+  transform: translate(-50%, -50%);
+  scale: 0.6;
+}
+body #wrap .content .alert_on {
+  z-index: 3000;
+}
+body #wrap .content .alert_off {
+  z-index: 1000;
+}
+body #wrap .content .info_1 {
+  height: 100%;
+  width: 43.333%;
+  margin-top: 3vh;
+}
+body #wrap .content .info_1 .control_area {
+  display: flex;
+  width: 100%;
+}
+body #wrap .content .info_1 .control_area p:nth-child(1) {
+  font-size: 6vh;
+  font-weight: bold;
+  margin-bottom: 4vh;
+}
+body #wrap .content .info_1 .control_area .battery_value {
+  font-weight: bold;
+  font-size: 4vh;
+  line-height: 5vh;
+  margin-left: 1vw;
+}
+body #wrap .content .info_1 .control_area .battery {
+  position: relative;
+  width: 10vw;
+  height: 5vh;
+  border: 0.6vh solid black;
+}
+body #wrap .content .info_1 .control_area .battery .battery_level {
+  width: 0;
+  height: 100%;
+  background-color: #38ff00;
+  transition: width 1s ease-in-out;
+}
+body #wrap .content .info_1 .control_area .battery .charging-icon {
+  position: absolute;
+  font-size: 4vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, -55%);
+}
+body #wrap .content .info_1 .control_area .location {
+  font-weight: bold;
+}
+body #wrap .content .info_1 .control_area .location_X {
+  margin: 0 0.5vw;
+  color: red;
+}
+body #wrap .content .info_1 .control_area .location_Y {
+  margin-right: 0.5vw;
+  color: red;
+}
+body #wrap .content .info_1 .control_area .location_angle {
+  color: red;
+}
+body #wrap .content .info_1 .control_area span {
+  font-size: 4vh;
+  font-weight: bold;
+}
+body #wrap .content .info_1 .control_area .forwardSpeed,
+body #wrap .content .info_1 .control_area .turnSpeed {
+  margin-left: 1vw;
+  color: red;
+}
+body #wrap .content .info_1 .control_area .height {
+  color: red;
+  margin-left: 1vw;
+}
+body #wrap .content .info_1 .control_area:nth-child(2) {
+  margin-bottom: 3vh;
+}
+body #wrap .content .info_2 {
+  height: 100%;
+  width: 23.333%;
+  margin-top: 3vh;
+  opacity: 0.1;
+}
+body #wrap .content .controller {
+  position: relative;
+  height: 100%;
+  width: 33.333%;
+}
+body #wrap .content .controller .movePoint_box {
+  padding: 1vh;
+  background-color: #3D3D3D;
+  border: 1.5vh solid #3D3D3D;
+  position: absolute;
+  width: 93%;
+  display: flex;
+  flex-wrap: wrap;
+  top: 20%;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body #wrap .content .controller .movePoint_box input {
+  width: 70%;
+  font-size: 3vh;
+  background-color: #656565;
+  color: white;
+}
+body #wrap .content .controller .movePoint_box button {
+  height: 10vh;
+  font-size: 3vh;
+  background-color: #323232;
+  color: white;
+}
+body #wrap .content .controller .movePoint_box .movePoint_Btn {
+  width: 28%;
+}
+body #wrap .content .controller .movePoint_box .moveStop_Btn,
+body #wrap .content .controller .movePoint_box .cancleTheMove_Btn {
+  margin-top: 2vh;
+}
+body #wrap .content .controller .movePoint_box .moveStop_Btn,
+body #wrap .content .controller .movePoint_box .cancleTheMove_Btn,
+body #wrap .content .controller .movePoint_box .moveAgain_Btn {
+  width: 50%;
+}
+body #wrap .content .controller .controller_box {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-wrap: wrap;
+}
+body #wrap .content .controller .controller_box .common-style {
+  width: 32.333%;
+  height: 32.333%;
+  background-color: #1296DB;
+  border-radius: 1rem;
+  margin: auto;
+}
+body #wrap .content .controller .controller_box .common-style:active {
+  background-color: #9D2414;
+}
+body #wrap .content .btn {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -5vw;
+  z-index: 1000;
+}
+body #wrap .content .btn img {
+  width: 5vw;
+  margin-right: 1vw;
+}
+body #wrap .content .btn .gainControl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3.3vh;
+  margin-right: 1vw;
+  width: 14vh;
+  background-color: #323232;
+  text-align: center;
+}
+body #wrap .content .btn .gainControl:active {
+  background-color: #9D2414;
+}
+body #wrap .content .btn .transferControl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3.3vh;
+  margin-right: 1vw;
+  width: 14vh;
+  background-color: #323232;
+  text-align: center;
+}
+body #wrap .content .btn .transferControl:active {
+  background-color: #9D2414;
+}
+body #wrap .content .btn .letter-p {
+  background: linear-gradient(to bottom right, #8dc7fa, #348cf1);
+  border-radius: 10%;
+}
+body #wrap .content .btn .letter-p:active {
+  background: linear-gradient(to bottom right, #d1cbca, #9D2414);
+}
+body #wrap .content .btn .messageArea {
+  width: 50vh;
+  margin-right: 1vw;
+  overflow: hidden;
+}
+body #wrap .content .btn .messageArea p {
+  transition: all 0.6s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+  color: #ff5050;
+  line-height: 7vh;
+  font-size: 4vh;
+  font-weight: bold;
+  text-align: center;
+  transform: translate(0, 2rem);
+}
+body #wrap .content .btn .xi-log-out {
+  font-size: 9vh;
+  font-weight: bold;
+  margin: 0 2vw;
+}
+body #wrap .content .btn .xi-log-out:active {
+  color: #9D2414;
+}
+body #wrap .content .settingArea {
+  transition: all 0.1s ease-in;
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -57%);
+  width: 45%;
+  height: 116%;
+  opacity: 0.9;
+  background-color: #3D3D3D;
+  z-index: 1000;
+}
+body #wrap .content .settingArea .setting {
+  color: white;
+  background-color: #222222;
+  margin: 3%;
+}
+body #wrap .content .settingArea .setting .setting_box,
+body #wrap .content .settingArea .setting .speed_box {
+  width: 100%;
+}
+body #wrap .content .settingArea .setting .setting_box .setting_box_1,
+body #wrap .content .settingArea .setting .setting_box .speed_box_1,
+body #wrap .content .settingArea .setting .speed_box .setting_box_1,
+body #wrap .content .settingArea .setting .speed_box .speed_box_1 {
+  display: flex;
+  justify-content: space-around;
+}
+body #wrap .content .settingArea .setting .setting_box .setting_box_1 p,
+body #wrap .content .settingArea .setting .setting_box .speed_box_1 p,
+body #wrap .content .settingArea .setting .speed_box .setting_box_1 p,
+body #wrap .content .settingArea .setting .speed_box .speed_box_1 p {
+  font-size: 4vh;
+  width: 70%;
+}
+body #wrap .content .settingArea .setting .setting_box .setting_box_1 select,
+body #wrap .content .settingArea .setting .setting_box .speed_box_1 select,
+body #wrap .content .settingArea .setting .speed_box .setting_box_1 select,
+body #wrap .content .settingArea .setting .speed_box .speed_box_1 select {
+  font-size: 3vh;
+  background-color: #656565;
+  color: white;
+}
+body #wrap .content .settingArea .setting .setting_box .setting_box_1 select option,
+body #wrap .content .settingArea .setting .setting_box .speed_box_1 select option,
+body #wrap .content .settingArea .setting .speed_box .setting_box_1 select option,
+body #wrap .content .settingArea .setting .speed_box .speed_box_1 select option {
+  font-size: 3vh;
+}
+body #wrap .content .settingArea .setting .setting_box .setting_box_1 input,
+body #wrap .content .settingArea .setting .setting_box .speed_box_1 input,
+body #wrap .content .settingArea .setting .speed_box .setting_box_1 input,
+body #wrap .content .settingArea .setting .speed_box .speed_box_1 input {
+  color: white;
+  background-color: #3D3D3D;
+  width: 17%;
+  transform: translate(0, -1vh);
+  font-size: 4vh;
+}
+body #wrap .content .settingArea .setting .setting_box .setting_box_2,
+body #wrap .content .settingArea .setting .setting_box .setting_box_3,
+body #wrap .content .settingArea .setting .setting_box .speed_box_2,
+body #wrap .content .settingArea .setting .speed_box .setting_box_2,
+body #wrap .content .settingArea .setting .speed_box .setting_box_3,
+body #wrap .content .settingArea .setting .speed_box .speed_box_2 {
+  display: flex;
+  justify-content: center;
+}
+body #wrap .content .settingArea .setting .setting_box .settingContent input,
+body #wrap .content .settingArea .setting .speed_box .settingContent input {
+  font-size: 6vh;
+  height: 10vh;
+  width: 100%;
+  color: white;
+  background-color: #3D3D3D;
+}
+body #wrap .content .settingArea .setting .setting_box .speed_box_2,
+body #wrap .content .settingArea .setting .speed_box .speed_box_2 {
+  margin-top: 1vh;
+}
+body #wrap .content .settingArea .setting .setting_box .speed_box_2 input,
+body #wrap .content .settingArea .setting .speed_box .speed_box_2 input {
+  width: 100%;
+}
+body #wrap .content .settingArea .setting .setting_box .speed_box_2 select,
+body #wrap .content .settingArea .setting .speed_box .speed_box_2 select {
+  font-size: 3vh;
+  background-color: #656565;
+  color: white;
+}
+body #wrap .content .settingArea .setting .setting_box .speed_box_2 select option,
+body #wrap .content .settingArea .setting .speed_box .speed_box_2 select option {
+  font-size: 3vh;
+}
+body #wrap .content .settingArea .setting p {
+  text-align: center;
+  font-size: 6vh;
+  margin: 2vh 0;
+}
+body #wrap .content .settingArea .setting_3 .close_box {
+  position: absolute;
+  top: 86%;
+  width: 94%;
+}
+body #wrap .content .settingArea .setting_3 .close_box input {
+  font-size: 5vh;
+  height: 10vh;
+  width: 100%;
+  color: white;
+  background-color: #3D3D3D;
+}
+
+/*# sourceMappingURL=AMRC.css.map */

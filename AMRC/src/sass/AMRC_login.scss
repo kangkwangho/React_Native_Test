@@ -1,0 +1,385 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 3vh;
+    list-style: none;
+}
+
+body {
+
+    background: linear-gradient(to bottom, #25b7ff, #F0C7E1);
+}
+
+.wrap {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    .alert_modal {
+        z-index: 2000;
+        position: absolute;
+        width: 100%;
+        height: 7%;
+        background: red;
+
+        p {
+            font-size: 4vh;
+            color: white;
+            text-align: center;
+        }
+    }
+
+    .login {
+        box-shadow: 0.3rem 0.3rem 0.3rem #888888;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        height: 80%;
+        background-color: white;
+        border-radius: 5%;
+
+        .setting_box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 5%;
+            background-color: white;
+            border: 0.7vh solid #cf56569e;
+
+            #Join_BTN {
+                position: absolute;
+                color: white;
+                background-color: #2F80Ed;
+                top: 88%;
+                width: 90%;
+                height: 8%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .xi-close-min {
+                position: absolute;
+                font-size: 7vh;
+                top: 5%;
+                left: 93%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+            }
+
+            .setting_box_1 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: flex-end;
+                width: 100%;
+                height: 30%;
+
+                .icon_box {
+                    position: absolute;
+                    display: flex;
+                    top: 16%;
+                    justify-content: space-around;
+                    width: 100%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    width: 100%;
+
+                    img {
+                        height: 7vh;
+                    }
+                }
+
+                .setting_content {
+                    width: 30%;
+                    height: 30%;
+                    text-align: center;
+                    font-weight: bold;
+                    border: none;
+                }
+            }
+
+            .setting_box_2 {
+                width: 100%;
+                height: 70%;
+
+                .content_4_wrap {
+                    height: 8vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+
+                    .content_4 {
+                        color: red;
+                    }
+                }
+
+                .content_5 {
+                    width: 100%;
+                    height: 90%;
+                    margin-top: 3vh;
+
+                    .content_box_2 {
+                        position: relative;
+                        width: 100%;
+                        height: 70%;
+
+                        .content_box_2-1 {
+                            li input {
+                                text-align: center;
+                                height: 6vh;
+                            }
+
+                            li:nth-child(1) {
+                                margin-bottom: 2vh;
+                                height: 2vh;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                input {
+                                    width: unset;
+                                }
+
+                                span {
+                                    margin-left: 1vw;
+                                    color: blue;
+                                    font-weight: bold;
+                                }
+
+                            }
+
+                            li:nth-child(2) {
+                                margin-bottom: 2vh;
+                            }
+
+                            label {
+                                display: inline-block;
+                                width: 20%;
+                                text-align: center;
+                            }
+
+                            input {
+                                width: 72%;
+                            }
+
+                            .password_eye2 {
+                                position: absolute;
+                                top: 47%;
+                                left: 92%;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+
+
+
+                        .content_box_2-2 {
+                            li input {
+                                text-align: center;
+                                height: 5vh;
+                            }
+
+                            li:nth-child(1) {
+                                margin: 1vh 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            li:nth-child(2) {
+                                margin-bottom: 1vh;
+                            }
+
+                            li:nth-child(4) {
+                                color: blue;
+                                margin: 1vh 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            li:nth-child(5) {
+                                margin-bottom: 1vh;
+                            }
+
+                            label {
+                                display: inline-block;
+                                width: 20%;
+                                text-align: center;
+                            }
+
+                            input {
+                                width: 72%;
+                            }
+
+                            .password_eye3 {
+                                position: absolute;
+                                top: 43%;
+                                left: 92%;
+                                transform: translate(-50%, -50%);
+                            }
+
+                            .password_eye4 {
+                                position: absolute;
+                                top: 97%;
+                                left: 92%;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+
+                        .content_box_2-3 {
+                            li input {
+                                text-align: center;
+                                height: 5vh;
+                            }
+
+                            li:nth-child(1) {
+                                margin: 1vh 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            li:nth-child(2) {
+                                margin-bottom: 1vh;
+                            }
+
+                            li:nth-child(4) {
+                                color: blue;
+                                margin: 1vh 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            li:nth-child(5) {
+                                margin-bottom: 1vh;
+                            }
+
+                            label {
+                                display: inline-block;
+                                width: 20%;
+                                text-align: center;
+                            }
+
+                            input {
+                                width: 72%;
+                            }
+
+                            #change_master_pwd {
+                                font-size: 2vh;
+                            }
+
+                            .password_eye5 {
+                                position: absolute;
+                                top: 43%;
+                                left: 92%;
+                                transform: translate(-50%, -50%);
+                            }
+
+                            .password_eye6 {
+                                position: absolute;
+                                top: 97%;
+                                left: 92%;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+                    }
+
+
+
+
+
+
+
+
+
+                    .content_box_3 {
+                        width: 100%;
+                        height: 40%;
+                        background-color: red;
+                    }
+
+                    .content_box_4 {
+                        width: 100%;
+                        height: 60%;
+                        background-color: pink;
+                    }
+
+
+                }
+            }
+        }
+
+        .login_1 {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 60%;
+
+            img {
+                width: 100%;
+            }
+
+            #setting {
+                position: absolute;
+                width: 15%;
+                top: 6%;
+                left: 92%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+            }
+        }
+
+        .login_2 {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-self: center;
+            width: 100%;
+            height: 30%;
+
+            .password_eye {
+                position: absolute;
+                top: 47%;
+                left: 92%;
+                transform: translate(-50%, -50%);
+
+                .xi-eye-slash,
+                .xi-eye {
+                    cursor: pointer;
+                }
+            }
+
+            input,
+            button {
+                width: 90%;
+                height: 25%;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            button {
+                background: #2F80Ed;
+                color: white;
+                margin-top: 4vh;
+                cursor: pointer;
+            }
+
+            input:nth-child(2) {
+                margin-top: 1vh;
+            }
+
+            .eye-icon {
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+    }
+}

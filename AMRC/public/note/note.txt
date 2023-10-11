@@ -1,0 +1,10 @@
+[note]
+1. mysqldump를 사용하여 DB의 내용을 가져오고 백업하기
+
+
+[AMRC_login]
+1. mysql 실행해야한다. (mysql 로그인 자체가 mysql 실행 )
+2. try catch를 활용해 node.js 에러시 서버가 터지는 것을 방지
+3. redirect으로 라우터를 불러와 render를 실행시 화면에 안나오고 콘솔에 코드가 보임(모르겠음)
+4. window.location.href = "/라우터"를 통해 render 라우터에 접근해 실행하니 됨
+5. 쿠키는 창을 닫는다고 사리지지않음(검사 -> 어플리케이션 -> 쿠키에서 쿠키 확인가능)

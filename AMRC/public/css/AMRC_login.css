@@ -1,0 +1,313 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 3vh;
+  list-style: none;
+}
+
+body {
+  background: linear-gradient(to bottom, #25b7ff, #F0C7E1);
+}
+
+.wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.wrap .alert_modal {
+  z-index: 2000;
+  position: absolute;
+  width: 100%;
+  height: 7%;
+  background: red;
+}
+.wrap .alert_modal p {
+  font-size: 4vh;
+  color: white;
+  text-align: center;
+}
+.wrap .login {
+  box-shadow: 0.3rem 0.3rem 0.3rem #888888;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 80%;
+  background-color: white;
+  border-radius: 5%;
+}
+.wrap .login .setting_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  background-color: white;
+  border: 0.7vh solid rgba(207, 86, 86, 0.6196078431);
+}
+.wrap .login .setting_box #Join_BTN {
+  position: absolute;
+  color: white;
+  background-color: #2F80Ed;
+  top: 88%;
+  width: 90%;
+  height: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap .login .setting_box .xi-close-min {
+  position: absolute;
+  font-size: 7vh;
+  top: 5%;
+  left: 93%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.wrap .login .setting_box .setting_box_1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 100%;
+  height: 30%;
+}
+.wrap .login .setting_box .setting_box_1 .icon_box {
+  position: absolute;
+  display: flex;
+  top: 16%;
+  justify-content: space-around;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 100%;
+}
+.wrap .login .setting_box .setting_box_1 .icon_box img {
+  height: 7vh;
+}
+.wrap .login .setting_box .setting_box_1 .setting_content {
+  width: 30%;
+  height: 30%;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+}
+.wrap .login .setting_box .setting_box_2 {
+  width: 100%;
+  height: 70%;
+}
+.wrap .login .setting_box .setting_box_2 .content_4_wrap {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.wrap .login .setting_box .setting_box_2 .content_4_wrap .content_4 {
+  color: red;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 {
+  width: 100%;
+  height: 90%;
+  margin-top: 3vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 {
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-1 li input {
+  text-align: center;
+  height: 6vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-1 li:nth-child(1) {
+  margin-bottom: 2vh;
+  height: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-1 li:nth-child(1) input {
+  width: unset;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-1 li:nth-child(1) span {
+  margin-left: 1vw;
+  color: blue;
+  font-weight: bold;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-1 li:nth-child(2) {
+  margin-bottom: 2vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-1 label {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-1 input {
+  width: 72%;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-1 .password_eye2 {
+  position: absolute;
+  top: 47%;
+  left: 92%;
+  transform: translate(-50%, -50%);
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-2 li input {
+  text-align: center;
+  height: 5vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-2 li:nth-child(1) {
+  margin: 1vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-2 li:nth-child(2) {
+  margin-bottom: 1vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-2 li:nth-child(4) {
+  color: blue;
+  margin: 1vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-2 li:nth-child(5) {
+  margin-bottom: 1vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-2 label {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-2 input {
+  width: 72%;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-2 .password_eye3 {
+  position: absolute;
+  top: 43%;
+  left: 92%;
+  transform: translate(-50%, -50%);
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-2 .password_eye4 {
+  position: absolute;
+  top: 97%;
+  left: 92%;
+  transform: translate(-50%, -50%);
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 li input {
+  text-align: center;
+  height: 5vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 li:nth-child(1) {
+  margin: 1vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 li:nth-child(2) {
+  margin-bottom: 1vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 li:nth-child(4) {
+  color: blue;
+  margin: 1vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 li:nth-child(5) {
+  margin-bottom: 1vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 label {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 input {
+  width: 72%;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 #change_master_pwd {
+  font-size: 2vh;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 .password_eye5 {
+  position: absolute;
+  top: 43%;
+  left: 92%;
+  transform: translate(-50%, -50%);
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_2 .content_box_2-3 .password_eye6 {
+  position: absolute;
+  top: 97%;
+  left: 92%;
+  transform: translate(-50%, -50%);
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_3 {
+  width: 100%;
+  height: 40%;
+  background-color: red;
+}
+.wrap .login .setting_box .setting_box_2 .content_5 .content_box_4 {
+  width: 100%;
+  height: 60%;
+  background-color: pink;
+}
+.wrap .login .login_1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+}
+.wrap .login .login_1 img {
+  width: 100%;
+}
+.wrap .login .login_1 #setting {
+  position: absolute;
+  width: 15%;
+  top: 6%;
+  left: 92%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.wrap .login .login_2 {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  width: 100%;
+  height: 30%;
+}
+.wrap .login .login_2 .password_eye {
+  position: absolute;
+  top: 47%;
+  left: 92%;
+  transform: translate(-50%, -50%);
+}
+.wrap .login .login_2 .password_eye .xi-eye-slash,
+.wrap .login .login_2 .password_eye .xi-eye {
+  cursor: pointer;
+}
+.wrap .login .login_2 input,
+.wrap .login .login_2 button {
+  width: 90%;
+  height: 25%;
+  text-align: center;
+  margin: 0 auto;
+}
+.wrap .login .login_2 button {
+  background: #2F80Ed;
+  color: white;
+  margin-top: 4vh;
+  cursor: pointer;
+}
+.wrap .login .login_2 input:nth-child(2) {
+  margin-top: 1vh;
+}
+.wrap .login .login_2 .eye-icon {
+  cursor: pointer;
+  user-select: none;
+}
+
+/*# sourceMappingURL=AMRC_login.css.map */
