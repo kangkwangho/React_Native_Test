@@ -5,9 +5,10 @@ $("#login_BTN").on("touchstart", () => {
         url: "/login",
         type: "POST",
         contentType: "application/json",
-        data: JSON.stringify({ "userID": userID, "userPWD": userPWD }),
+        data: JSON.stringify({ userID: userID, userPWD: userPWD }),
         success: function (response) {
-            if (response.result) {
+            console.log(response);
+            if (response.success) {
                 //노드 라우터로 다이렉트 연결 가능..!
                 if (response.master == "master") {
                     //?뒤로는 데이터 전달 key=value&key2=value2
@@ -153,7 +154,7 @@ $(document).on("touchstart", ".content_A", () => {
         $.ajax({
             url: "/submit_1",
             type: "POST",
-            data: JSON.stringify({ "master_checkbox": master_checkbox, "create_id": create_id, "create_pwd": create_pwd }),
+            data: JSON.stringify({ master_checkbox: master_checkbox, create_id: create_id, create_pwd: create_pwd }),
             contentType: "application/json",
             success: function (response) {
                 signUp_resultContent(response.result);
@@ -224,22 +225,12 @@ $(document).on("touchstart", ".content_B", () => {
         data: JSON.stringify({ current_id: current_id, current_pwd: current_pwd, new_id: new_id, new_pwd: new_pwd }),
         success: function (response) {
             if (response.error) {
-
-
-
                 signUp_resultContent(response.error);
-
-
-
-
             } else if (response.success) {
-
                 signUp_resultContent(response.success);
-
             }
         },
         error: function (xhr, status, error) {
-
         }
     })
 });

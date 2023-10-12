@@ -2,21 +2,13 @@ const ModbusRTU = require('modbus-serial');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3012;
-const mysql = require("mysql");
+const port = 3011;
+const sqlite3 = require('sqlite3').verbose();
 const cookieParser = require('cookie-parser');
 const exec = require('child_process').exec;
 
 
 ////////////////////////////////////////////////////////////////////
-let con = mysql.createConnection({
-    connectionLimit: 10,
-    host: "localhost",
-    user: "pepe",
-    password: "Password@0000",
-    database: "AMR_Controller"
-});
-
 app.use(cookieParser());
 app.use(express.json());
 app.locals.pretty = true;
@@ -57,7 +49,7 @@ function connect_AMR(value1, value2, res) {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 }
 
@@ -85,7 +77,7 @@ app.post("/connect", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -105,22 +97,9 @@ app.post("/liftUp", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //리프트 리미트 업다운(fork)
 app.post("/liftUp_fork", (req, res) => {
@@ -130,7 +109,7 @@ app.post("/liftUp_fork", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -156,7 +135,7 @@ function float32_menual(address, value, res) {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 }
 
@@ -193,25 +172,9 @@ function float32_menual2(address, value, address2, value2, res) {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -226,7 +189,7 @@ app.post("/speed_forward", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 })
 
@@ -236,7 +199,7 @@ app.post("/speed_turn", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 })
 
@@ -293,7 +256,7 @@ app.post("/moveStop_Btn", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 })
 
@@ -312,7 +275,7 @@ app.post("/moveAgain_Btn", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 })
 
@@ -331,7 +294,7 @@ app.post("/cancleTheMove_Btn", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 })
 
@@ -352,7 +315,7 @@ app.post("/error", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -372,7 +335,7 @@ app.post("/move_there", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -392,7 +355,7 @@ app.post("/gainControl", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -412,7 +375,7 @@ app.post("/transferControl", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -428,7 +391,7 @@ app.post("/battery", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -443,7 +406,7 @@ app.post("/isCharging", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -459,7 +422,7 @@ app.post("/robotLocation_X", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -475,7 +438,7 @@ app.post("/robotLocation_Y", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -491,7 +454,7 @@ app.post("/robotLocation_angle", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -507,7 +470,7 @@ app.post("/robot_height", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -523,7 +486,7 @@ app.post("/robot_height_fork", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -605,7 +568,7 @@ app.post("/EMC", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -625,7 +588,7 @@ app.post("/error3", (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
@@ -633,9 +596,29 @@ app.post("/error3", (req, res) => {
 /////////  LOG-IN /////////////////////////////////////////////////////////////////
 /////////  LOG-IN /////////////////////////////////////////////////////////////////
 /////////  LOG-IN /////////////////////////////////////////////////////////////////
-//mysql 로그인 자체가 mysql 실행
 //로그인 한 번 하면 24시간 쿠키 생겨서 로그인창 다시 확인하려면 쿠키 지워서 확인
-con.connect();
+const db = new sqlite3.Database('mydatabase.db');
+
+
+db.serialize(function () {
+    db.run(`
+    CREATE TABLE IF NOT EXISTS users (
+      UserID INTEGER PRIMARY KEY AUTOINCREMENT,
+      Username TEXT NOT NULL,
+      Password TEXT NOT NULL,
+      master_user TEXT
+    )
+  `);
+    db.run(`
+    CREATE TABLE IF NOT EXISTS Pending_Approval_User (
+      UserID INTEGER PRIMARY KEY AUTOINCREMENT,
+      Username TEXT NOT NULL,
+      Password TEXT NOT NULL,
+      master_user TEXT
+    )
+  `);
+
+});
 
 
 //로그인 화면
@@ -645,72 +628,57 @@ app.get('/', (req, res) => {
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
 app.get('/Login-complete', (req, res) => {
     try {
-
         //window.location.href = "/Login-complete?data=master";
         let master_value = req.query.data;
         //쿠키의 객체가 있는지 확인 및 설정된 이름의 쿠키가 있는지 여부
         if (req.cookies && req.cookies.persistentCookie) {
             res.render("AMRC", { master: master_value });
         } else {
-
             //로그인 화면으로 리다이렉션
             res.redirect('/');
         }
     } catch (error) {
         console.error("에러 발생:", error.message);
         // 에러 처리
-        res.status(500).json({ success: false, message: "서버 에러" });
+        res.status(500).json({ success: false, message: "Server Error" });
     }
 });
 
 app.post("/login", (req, res) => {
-    let { userID, userPWD } = req.body;
-    let sql = `SELECT * from Users WHERE Username = ?`;
+    const { userID, userPWD } = req.body;
+    const sql = `SELECT * from users WHERE username = ?`;
 
-    //[userID] 값은 변수 sql ? 에 들어가는 값이다.
-    con.query(sql, [userID], (err, result) => {
-        if (err) throw err;
-        try {
-            if (userID == result[0].Username && userPWD == result[0].Password) {
-
-                //set cookie time
-                const oneDay = 24 * 60 * 60 * 1000 // 1day
+    db.get(sql, [userID], (err, row) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ success: false, message: 'Server Error' });
+        }
+        console.log(row);
+        if (row) {
+            if (userID === row.Username && userPWD === row.Password) {
+                // 쿠키 설정
+                const oneDay = 24 * 60 * 60 * 1000; // 1일
                 const expirationDate = new Date(Date.now() + oneDay);
                 res.cookie("persistentCookie", "This is a persistent cookie", {
                     expires: expirationDate,
                 });
 
-                //res.redirect('/Login-complete'); -> 리다이렉트 되는데 res.render가 콘솔에 읽힘(미들웨에 문제?)
-                let master_value = result[0].master_user;
-                res.json({ result: true, master: master_value });
-
+                res.json({ success: true, master: row.master_user });
             } else {
                 console.log("false");
                 res.json({ success: false });
             }
-        } catch (error) {
-            console.error("에러 발생:", error.message);
-            // 에러 처리
-            res.status(500).json({ success: false, message: "서버 에러" });
+        } else {
+            console.log("사용자가 존재하지 않음");
+            res.json({ success: false, message: "The user does not exist" });
         }
-    })
+    });
 });
 /////////  LOG-IN /////////////////////////////////////////////////////////////////
 /////////  LOG-IN /////////////////////////////////////////////////////////////////
@@ -721,42 +689,65 @@ app.post("/login", (req, res) => {
 /////////  Sign up /////////////////////////////////////////////////////////////////
 /////////  Sign up /////////////////////////////////////////////////////////////////
 app.post("/submit_1", (req, res) => {
-    let { master_checkbox, create_id, create_pwd } = req.body;
+    const { master_checkbox, create_id, create_pwd } = req.body;
 
-    let sql = `SELECT Username FROM Users WHERE Username = ?`
-    con.query(sql, [create_id], (err, result) => {
-        if (result.length > 0) {
-            res.json({ "result": "A account already exists" })
+    const checkUserSql = `SELECT username FROM users WHERE username = ?`;
+
+    db.get(checkUserSql, [create_id], (err, userRow) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ result: "Server Error" });
+        }
+
+        if (userRow) {
+            return res.json({ result: "The account already exists" });
         } else {
             if (master_checkbox) {
-                sql = `SELECT master_user FROM Users WHERE master_user = "master"`;
-                con.query(sql, (err, result) => {
-                    //빈배열인지 확인하는 방법은 보편적으로 .length > 0 으로 확인한다
-                    if (result.length > 0) {
-                        res.json({ "result": "A master account already exists" });
+                const checkMasterSql = `SELECT username FROM users WHERE master_user = 'master'`;
+
+                db.get(checkMasterSql, (err, masterRow) => {
+                    if (err) {
+                        console.error(err);
+                        return res.status(500).json({ result: "Server Error" });
+                    }
+
+                    if (masterRow) {
+                        return res.json({ result: "The master account already exists" });
                     } else {
-                        //master가 없을 때 추가가능
-                        let values = [create_id, create_pwd, "master"];
-                        sql = 'INSERT INTO Users (Username, Password, master_user) VALUES (?,?,?)'
-                        con.query(sql, values, (err, result) => {
-                            if (err) throw err;
-                            res.json({ "result": "Account addition completed(master)" });
+                        const insertMasterSql = 'INSERT INTO users (username, password, master_user) VALUES (?, ?, ?)';
+                        const values = [create_id, create_pwd, "master"];
+
+                        db.run(insertMasterSql, values, function (err) {
+                            if (err) {
+                                console.error(err);
+                                return res.status(500).json({ result: "Server Error" });
+                            }
+                            return res.json({ result: "Account addition completed (Master)" });
                         });
                     }
                 });
             } else {
-                sql = `SELECT master_user FROM Users WHERE master_user = "master"`;
-                con.query(sql, (err, result) => {
-                    if (result.length > 0) {
-                        //create id
-                        let values = [create_id, create_pwd];
-                        sql = 'INSERT INTO Pending_Approval_User(Username, Password) VALUES (?,?)'
-                        con.query(sql, values, (err, result) => {
-                            if (err) throw err;
-                            res.json({ "result": "Account addition completed" });
+                const checkMasterSql = `SELECT username FROM users WHERE master_user = 'master'`;
+
+                db.get(checkMasterSql, (err, masterRow) => {
+                    if (err) {
+                        console.error(err);
+                        return res.status(500).json({ result: "Server Error" });
+                    }
+
+                    if (masterRow) {
+                        const insertPendingSql = 'INSERT INTO pending_approval_user (username, password) VALUES (?, ?)';
+                        const values = [create_id, create_pwd];
+
+                        db.run(insertPendingSql, values, function (err) {
+                            if (err) {
+                                console.error(err);
+                                return res.status(500).json({ result: "Server Error" });
+                            }
+                            return res.json({ result: "Account addition completed" });
                         });
                     } else {
-                        res.json({ "result": "Please create a master account" });
+                        return res.json({ result: "Please create the master account first" });
                     }
                 });
             }
@@ -770,39 +761,50 @@ app.post("/submit_1", (req, res) => {
 //Pending_Approval_User
 //Pending_Approval_User
 app.get("/pending_approval_users", (req, res) => {
-    let sql = "select * from Pending_Approval_User";
-    con.query(sql, (err, result) => {
-        res.json(result);
+    const sql = "SELECT * FROM pending_approval_user";
+
+    db.all(sql, (err, rows) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ success: false, message: '서버 에러' });
+        }
+        return res.json(rows);
     });
 });
 
 
 
-app.post("/delete_db", async (req, res) => {
+app.post("/delete_db", (req, res) => {
     try {
         const delete_db = req.body.delete_db;
         console.log(delete_db);
 
-        const sql = 'DELETE FROM Pending_Approval_User WHERE Username = ?';
-        await con.query(sql, [delete_db]);
-
-        res.json({ success: true, message: "삭제가 성공적으로 완료되었습니다." });
+        const sql = 'DELETE FROM pending_approval_user WHERE username = ?';
+        db.run(sql, [delete_db], function (err) {
+            if (err) {
+                console.error(err);
+                return res.status(500).json({ success: false, message: "An error occurred during deletion" });
+            }
+            return res.json({ success: true, message: "Deletion was completed successfully" });
+        });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: "삭제 중 오류가 발생했습니다." });
+        return res.status(500).json({ success: false, message: "An error occurred during deletion" });
     }
 });
 
 
 app.post("/addUser_db", (req, res) => {
-    let add_userIDs = req.body.userID;
-    let add_userPWDs = req.body.userPWD;
-    let master_user_value = null;
+    const add_userIDs = req.body.userID;
+    const add_userPWDs = req.body.userPWD;
+    const master_user_value = null;
+    let userID_values = [];
+
     // 사용자 추가 Promise 함수
     function addUser(username, password, master_user) {
         return new Promise((resolve, reject) => {
-            let sql = "INSERT INTO Users (Username, Password, master_user) VALUES (?, ?, ?)";
-            con.query(sql, [username, password, master_user], (err, result) => {
+            const sql = "INSERT INTO users (username, password, master_user) VALUES (?, ?, ?)";
+            db.run(sql, [username, password, master_user], function (err) {
                 if (err) {
                     reject(err);
                 } else {
@@ -813,10 +815,11 @@ app.post("/addUser_db", (req, res) => {
         });
     }
 
+    // 사용자 삭제 Promise 함수
     function deleteUser(username) {
         return new Promise((resolve, reject) => {
-            let sql = 'DELETE FROM Pending_Approval_User WHERE Username = ?';
-            con.query(sql, [username], (err, result) => {
+            const sql = 'DELETE FROM pending_approval_user WHERE username = ?';
+            db.run(sql, [username], function (err) {
                 if (err) {
                     reject(err);
                 } else {
@@ -826,14 +829,12 @@ app.post("/addUser_db", (req, res) => {
             });
         });
     }
-    let userID_values = [];
-    let userID_value;
+
     async function processUsers() {
         for (let i = 0; i < add_userIDs.length; i++) {
             await addUser(add_userIDs[i], add_userPWDs[i], master_user_value);
             await deleteUser(add_userIDs[i]);
-            userID_value = add_userIDs[i];
-            userID_values.push(userID_value);
+            userID_values.push(add_userIDs[i]);
             console.log("result:" + userID_values);
         }
         res.json({ userID_values: userID_values });
@@ -843,11 +844,11 @@ app.post("/addUser_db", (req, res) => {
         console.error("오류 발생:", error);
         res.status(500).send("오류 발생: " + error.message);
     });
-    
 });
 //Pending_Approval_User
 //Pending_Approval_User
 
+//server restart
 app.post("/server_restart", (req, res) => {
     function restartServer() {
         exec('AMRC_node.js', (error, stdout, stderr) => {
@@ -865,54 +866,30 @@ app.post("/server_restart", (req, res) => {
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Edit account
 //Edit account
 app.post("/change_user_DB", (req, res) => {
-    let { current_id, current_pwd, new_id, new_pwd } = req.body;
-    let sql_value = [new_id, new_pwd, current_id, current_pwd];
+    const { current_id, current_pwd, new_id, new_pwd } = req.body;
 
-    let sql = "SELECT Username FROM Users WHERE Username = ? AND Password = ?";
-    con.query(sql, [current_id, current_pwd], (err, result) => {
-        if (result.length == 0) {
-            res.json({ error: "User not found." });
-            console.log('a');
+    // 사용자 정보 검증
+    const checkUserSql = "SELECT username FROM users WHERE username = ? AND password = ?";
+    db.get(checkUserSql, [current_id, current_pwd], (err, userRow) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: "Server Error" });
+        }
+
+        if (!userRow) {
+            return res.json({ error: "User not found" });
         } else {
-            console.log('b');
-            sql = "UPDATE Users SET Username = ?, Password = ? WHERE Username = ? AND Password = ?";
-            con.query(sql, sql_value, (err, result) => {
-                res.json({ success: "User information updated successfully." });
+            // 사용자 정보 업데이트
+            const updateUserInfoSql = "UPDATE users SET username = ?, password = ? WHERE username = ? AND password = ?";
+            db.run(updateUserInfoSql, [new_id, new_pwd, current_id, current_pwd], function (err) {
+                if (err) {
+                    console.error(err);
+                    return res.status(500).json({ error: "An error occurred during user information update" });
+                }
+                return res.json({ success: "User information has been successfully updated" });
             });
         }
     });
@@ -924,47 +901,54 @@ app.post("/change_user_DB", (req, res) => {
 //change master
 app.post("/change_master", (req, res) => {
     let { current_master_id, current_master_pwd, change_master_id, change_master_pwd } = req.body;
-    console.log("current_id :" + current_master_id);
-    console.log("current_pwd :" + current_master_pwd);
-    console.log("change_id :" + change_master_id);
-    console.log("change_pwd :" + change_master_pwd);
     //ID의 존재여부 확인
-    let sql = "SELECT Username from Users WHERE Username = ?";
-    con.query(sql, [current_master_id], (err, result) => {
+    let sql = "SELECT Username from users WHERE Username = ?";
+    db.get(sql, [current_master_id], (err, result) => {
         if (err) throw err;
         if (result.length == 0) {
             res.json({ error: "User not found." });
         } else {
             //master_user 여부 확인
-            sql = "SELECT master_user FROM Users WHERE Username = ?";
-            con.query(sql, [current_master_id], (err, result) => {
+            sql = "SELECT master_user FROM users WHERE Username = ?";
+            db.get(sql, [current_master_id], (err, result) => {
                 if (err) throw err;
-                if (result[0].master_user != "master") {
+                if (result.master_user != "master") {
                     res.json({ error: "Please double-check the master ID and password." });
                 } else {
                     if (current_master_pwd == "" || change_master_id == "" || change_master_pwd == "") {
                         res.json({ error: "Please enter your ID and password." });
                     } else {
                         //현재 입력한 master ID, PWD 존재 확인
-                        sql = "SELECT Username, Password FROM Users WHERE Username = ? AND Password = ?";
-                        con.query(sql, [current_master_id, current_master_pwd], (err, result) => {
+                        sql = "SELECT Username, Password FROM users WHERE Username = ? AND Password = ?";
+                        db.get(sql, [current_master_id, current_master_pwd], (err, result) => {
                             if (err) throw err;
                             if (result.length == 0) {
                                 res.json({ error: "Please double-check the master ID and password." });
                             } else {
                                 //위임할 ID,PWD 존재 확인
-                                sql = "SELECT Username, Password FROM Users WHERE Username = ? AND Password = ?";
-                                con.query(sql, [change_master_id, change_master_pwd], (err, result) => {
+                                sql = "SELECT Username, Password FROM users WHERE Username = ? AND Password = ?";
+                                db.get(sql, [change_master_id, change_master_pwd], (err, result) => {
                                     if (err) throw err;
                                     if (result.length == 0) {
                                         res.json({ error: "Please double-check the ID and password." });
                                     } else {
                                         //master_user 위임
-                                        sql = "UPDATE Users SET master_user = CASE WHEN Username = ? THEN 'master' WHEN Username = ? THEN NULL END";
-                                        con.query(sql, [change_master_id, current_master_id], (error, result) => {
-                                            if (err) throw err;
-                                            res.json({ success: "User information updated successfully." });
+                                        db.serialize(function () {
+                                            db.run("BEGIN TRANSACTION");
+                                            sql = "UPDATE users SET master_user = CASE WHEN Username = ? THEN NULL WHEN Username = ? THEN 'master' END";
+                                            console.log(current_master_id,change_master_id);
+                                            db.run(sql, [current_master_id, change_master_id], function (err, result) {
+                                                console.log("결과" +result)
+                                                if (err) {
+                                                    db.run("ROLLBACK");
+                                                    throw err;
+                                                } else {
+                                                    db.run("COMMIT");
+                                                    res.json({ success: "User information updated successfully." });
+                                                }
+                                            });
                                         });
+
                                     }
                                 });
                             }
